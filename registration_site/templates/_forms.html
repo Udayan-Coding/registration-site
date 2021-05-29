@@ -1,10 +1,11 @@
 {% macro render_radio_field(field) %}
+    {{ field.label(class="form-label") }}
+
     <div class="form-check">
         {% for choice in field.choices %}
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="{{ field.name }}"
-                           id="{{ field.name }}-{{ choice }}" value="{{ choice }}" checked="">
+                    <input type="radio" class="form-check-input" name="{{ field.name }}" value="{{ choice }}">
                     {{ choice }}
                 </label>
             </div>
@@ -12,13 +13,25 @@
     </div>
 {% endmacro %}
 
+{% macro render_checkbox(field) %}
+    <div class="form-check">
+            <div class="form-check">
+                <label class="form-check-label">
+                    {{ field(class="form-check-input") }}
+                    {{ field.label.text }}
+                </label>
+            </div>
+    </div>
+{% endmacro %}
+
 {% macro render_field(field) %}
     <div class="form-group mt-4">
-        {{ field.label(class="form-label") }}
-
         {% if field.type == "RadioField" %}
             {{ render_radio_field(field) }}
+        {% elif field.type == "BooleanField" %}
+            {{ render_checkbox(field) }}
         {% else %}
+            {{ field.label(class="form-label") }}
             {{ field(class="form-control", **kwargs)|safe }}
         {% endif %}
 
