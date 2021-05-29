@@ -29,15 +29,17 @@ class RegistrationForm(FlaskForm):
                                                                            ])
 
     first_name = StringField('First Name', [validators.DataRequired()])
-    middle_name = StringField('Middle Name', [validators.DataRequired()])
-    last_name = StringField('Last Name', [validators.DataRequired()])
+    middle_name = StringField('Middle Name')
+    last_name = StringField('Last Name')
 
     gender = RadioField('Gender', [validators.DataRequired()], choices=['Female', 'Male'])
     date_of_birth = DateField('Date of Birth', [validators.DataRequired()])
-    contact_number = StringField('Contact Number', [validators.DataRequired()])
+    contact_number = StringField('Contact Number', [validators.DataRequired()],
+                                 description="Please provide your WhatsApp number if you use "
+                                             "WhatsApp")
 
     home_address = StringField('Home Address', [validators.DataRequired()])
-    country = StringField('Country', [validators.DataRequired()])
+    country = SelectField('Country', [validators.DataRequired()], choices=['India'])
     state = StringField('State', [validators.DataRequired()])
     city = StringField('City', [validators.DataRequired()])
 

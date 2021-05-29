@@ -1,0 +1,43 @@
+{% from "_forms.html" import render_field %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/yeti/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        {{ render_field(form.chapter) }}
+
+        {{ render_field(form.first_name) }}
+        {{ render_field(form.middle_name) }}
+        {{ render_field(form.last_name) }}
+
+        {{ render_field(form.gender) }}
+        {{ render_field(form.date_of_birth) }}
+        {{ render_field(form.contact_number) }}
+
+        {{ render_field(form.home_address) }}
+        {{ render_field(form.country) }}
+        {{ render_field(form.state) }}
+        {{ render_field(form.city) }}
+
+        {{ render_field(form.email) }}
+        {{ render_field(form.religion) }}
+        {{ render_field(form.caste) }}
+
+        <div class="form-group mt-4">
+            <button class="btn btn-lg btn-success" type="submit">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

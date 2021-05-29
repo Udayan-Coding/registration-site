@@ -8,8 +8,7 @@ flask = "*"
 flask-wtf = "*"
 gspread = "*"
 oauth2client = "*"
-google-api-client = "*"
-gsheet = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

@@ -1,0 +1,37 @@
+{% macro render_radio_field(field) %}
+    <div class="form-check">
+        {% for choice in field.choices %}
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="{{ field.name }}"
+                           id="{{ field.name }}-{{ choice }}" value="{{ choice }}" checked="">
+                    {{ choice }}
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro render_field(field) %}
+    <div class="form-group mt-4">
+        {{ field.label(class="form-label") }}
+
+        {% if field.type == "RadioField" %}
+            {{ render_radio_field(field) }}
+        {% else %}
+            {{ field(class="form-control", **kwargs)|safe }}
+        {% endif %}
+
+        {% if field.description %}
+            <small class="form-text text-muted" id="{{ field.name }}-help">{{ field.description }}</small>
+        {% endif %}
+
+        {% if field.errors %}
+            <ul class="errors alert alert-danger">
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endmacro %}
