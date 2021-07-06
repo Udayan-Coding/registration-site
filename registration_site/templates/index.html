@@ -11,90 +11,93 @@
 </head>
 <body>
 <div class="container">
+    <div class="p-5 bg-white text-center">
+    <h1 class="text-center">Registration Website</h1>
     <form method="POST" action="/">
-        {{ form.csrf_token }}
-        {{ render_field(form.chapter) }}
+        <br/>{{ form.csrf_token }}
+        <br/>{{ render_field(form.chapter) }}
+<br/>
+        <br/>{{ render_field(form.first_name) }}
+        <br/>{{ render_field(form.middle_name) }}
+        <br/>{{ render_field(form.last_name) }}
+<br/>
+        <br/>{{ render_field(form.gender) }}
+        <br/>{{ render_field(form.date_of_birth) }}
+        <br/>{{ render_field(form.contact_number) }}
+        <br/>{{ render_field(form.home_address) }}
+        <br/>{{ render_field(form.pin_code) }}
+<br/>
+        <br/>{{ render_field(form.country) }}
+        <br/>{{ render_field(form.state) }}
+        <br/>{{ render_field(form.city) }}
+        <br/>{{ render_field(form.email) }}
+        <br/>{{ render_field(form.religion) }}
+        <br/>{{ render_field(form.caste) }}
+        <br/>{{ render_field(form.reservation) }}
+<br/>
+        <br/>{{ render_field(form.has_disability) }}
+        <br/>{{ render_field(form.disability) }}
+<br/>
+        <br/>{{ render_field(form.marital_status) }}
+<br/>
+        <br/>{{ render_field(form.identification_type) }}
+        <br/>{{ render_field(form.aadhar_card_number) }}
+<br/>
+        <br/>{{ render_field(form.applied_before) }}
+<br/>
+        <br/>{{ render_field(form.school) }}
+        <br/>{{ render_field(form.additional_school) }}
+        <br/>{{ render_field(form.stream) }}
+        <br/>{{ render_field(form.vocational_course_details) }}
+        <br/>{{ render_field(form.school_10th) }}
+        <br/>{{ render_field(form.school_address) }}
+<br/>
+<br/>
+        <br/>{{ render_field(form.recent_10th_12th) }}
+<br/>
+        <br/>{{ render_field(form.matric_pct) }}
+        <br/>{{ render_field(form.distinction_subjects_10th) }}
+        <br/>{{ render_field(form.board_10th) }}
+        <br/>{{ render_field(form.passing_year_10th) }}
+        <br/>{{ render_field(form.current_class) }}
+<br/>
+        <br/>{{ render_field(form.excellence_field) }}
+        <br/>{{ render_field(form.hobbies) }}
+<br/>
+        <br/>{{ render_field(form.fathers_name) }}
+        <br/>{{ render_field(form.fathers_age) }}
+        <br/>{{ render_field(form.fathers_gender) }}
+        <br/>{{ render_field(form.fathers_qualification) }}
+        <br/>{{ render_field(form.fathers_marital_status) }}
+        <br/>{{ render_field(form.fathers_occupation) }}
+        <br/>{{ render_field(form.fathers_monthly_income) }}
+<br/>
+        <br/>{{ render_field(form.mothers_name) }}
+        <br/>{{ render_field(form.mothers_age) }}
+        <br/>{{ render_field(form.mothers_gender) }}
+        <br/>{{ render_field(form.mothers_qualification) }}
+        <br/>{{ render_field(form.mothers_marital_status) }}
+        <br/>{{ render_field(form.mothers_occupation) }}
+        <br/>{{ render_field(form.mothers_monthly_income) }}
+<br/>
+        <br/>{{ render_field(form.has_single_parents) }}
+        <br/>{{ render_field(form.who_is_single_parent) }}
+        <br/>{{ render_field(form.guardian_details) }}
+<br/>
+        <br/>{{ render_field(form.has_sibling) }}
+        <br/>{{ render_field(form.sibling_details) }}
+<br/>
+        <br/>{{ render_field(form.annual_family_income) }}
+<br/>
+        <br/>{{ render_field(form.sibling_beneficiary) }}
 
-        {{ render_field(form.first_name) }}
-        {{ render_field(form.middle_name) }}
-        {{ render_field(form.last_name) }}
-
-        {{ render_field(form.gender) }}
-        {{ render_field(form.date_of_birth) }}
-        {{ render_field(form.contact_number) }}
-        {{ render_field(form.home_address) }}
-        {{ render_field(form.pin_code) }}
-
-        {{ render_field(form.country) }}
-        {{ render_field(form.state) }}
-        {{ render_field(form.city) }}
-        {{ render_field(form.email) }}
-        {{ render_field(form.religion) }}
-        {{ render_field(form.caste) }}
-        {{ render_field(form.reservation) }}
-
-        {{ render_field(form.has_disability) }}
-        {{ render_field(form.disability) }}
-
-        {{ render_field(form.marital_status) }}
-
-        {{ render_field(form.identification_type) }}
-        {{ render_field(form.aadhar_card_number) }}
-
-        {{ render_field(form.applied_before) }}
-
-        {{ render_field(form.school) }}
-        {{ render_field(form.additional_school) }}
-        {{ render_field(form.stream) }}
-        {{ render_field(form.vocational_course_details) }}
-        {{ render_field(form.school_10th) }}
-        {{ render_field(form.school_address) }}
-
-
-        {{ render_field(form.recent_10th_12th) }}
-
-        {{ render_field(form.matric_pct) }}
-        {{ render_field(form.distinction_subjects_10th) }}
-        {{ render_field(form.board_10th) }}
-        {{ render_field(form.passing_year_10th) }}
-        {{ render_field(form.current_class) }}
-
-        {{ render_field(form.excellence_field) }}
-        {{ render_field(form.hobbies) }}
-
-        {{ render_field(form.fathers_name) }}
-        {{ render_field(form.fathers_age) }}
-        {{ render_field(form.fathers_gender) }}
-        {{ render_field(form.fathers_qualification) }}
-        {{ render_field(form.fathers_marital_status) }}
-        {{ render_field(form.fathers_occupation) }}
-        {{ render_field(form.fathers_monthly_income) }}
-
-        {{ render_field(form.mothers_name) }}
-        {{ render_field(form.mothers_age) }}
-        {{ render_field(form.mothers_gender) }}
-        {{ render_field(form.mothers_qualification) }}
-        {{ render_field(form.mothers_marital_status) }}
-        {{ render_field(form.mothers_occupation) }}
-        {{ render_field(form.mothers_monthly_income) }}
-
-        {{ render_field(form.has_single_parents) }}
-        {{ render_field(form.who_is_single_parent) }}
-        {{ render_field(form.guardian_details) }}
-
-        {{ render_field(form.has_sibling) }}
-        {{ render_field(form.sibling_details) }}
-
-        {{ render_field(form.annual_family_income) }}
-
-        {{ render_field(form.sibling_beneficiary) }}
-
-        <div class="form-group mt-4">
-            <button class="btn btn-lg btn-success" type="submit">
+        <div class="form-group mt-4 text-center">
+            <button class="btn btn-lg btn-success text-center" type="submit">
                 Submit
             </button>
         </div>
     </form>
+    </div>
 </div>
 </body>
 </html>
